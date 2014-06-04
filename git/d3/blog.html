@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>D3 Lesson 1</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+<style>
+
+  svg {
+     background-color: #00cccc;
+        }
+
+  .mayo {
+     stroke: #006600;
+     fill  : #cc0000;
+     background-color: #cc00cc;
+  }
+
+  #relish {
+     fill  : #6600cc;
+  }
+
+</style>
+
+<script type="text/javascript">
+
+var w = 500;
+var h = 500;
+
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h)
+            .attr("class", "mayo");
+
+var circle = svg.append("circle")
+            .attr("cx", h/2)
+            .attr("cy", w/2)
+            .attr("r", 100)
+            .attr("fill", "#cccc00")
+            .attr("class", "mayo")
+            .attr("id", "relish")
+
+
+
+</script>
+
+</body>
+</html>

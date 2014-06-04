@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>D3 Lesson 5</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+<script src="myscripts.js"></script>
+
+<!--<div id="buffer"></div>
+<div id="frame">
+<div id="chart-a"> Chart A </div>
+</div>
+-->
+
+<div id="hella"></div>
+
+
+<script type="text/javascript">
+
+ /*       CHART A           */   
+
+
+d3.text("cool_data.csv", function(datasetText) {
+
+var parsedCSV = d3.csv.parseRows(datasetText);
+
+
+var data=[];
+for(i = 1; i< parsedCSV.length; i++) {
+
+  data.push(Number(parsedCSV[i][1]))
+  console.log(parsedCSV[i][1])
+}
+
+console.log(data)
+var coolData = [1, 2, 3, 4, 5];
+
+makeHorizontalBarChart(data, 500, 300, "#hella", "#00cc00", 10)
+
+});
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

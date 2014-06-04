@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>D3 Lesson 2</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<script src="myscripts.js"></script>
+<script src="mystyle.css"></script>
+
+<!--<div id="buffer"></div>
+<div id="frame">
+<div id="chart-a"> Chart A </div>
+</div>
+-->
+
+<div id="hella"></div>
+
+
+<script type="text/javascript">
+
+ /*       CHART A           */   
+
+
+d3.text("auto_mpg_tmp.csv", function(datasetText) {
+
+var parsedCSV = d3.csv.parseRows(datasetText);
+
+var sampleHTML = d3.select("#hella")
+    .append("table")
+    .style("border-collapse", "collapse")
+    .style("border", "2px black solid")
+
+    .selectAll("tr")
+    .data(parsedCSV)
+    .enter().append("tr")
+
+    .selectAll("td")
+    .data(function(d){return d;})
+    .enter().append("td")
+    .style("border", "1px black solid")
+    .style("padding", "5px")
+    .on("mouseover", function(){d3.select(this).style("background-color", "aliceblue")})
+    .on("mouseout", function(){d3.select(this).style("background-color", "white")})
+    .text(function(d){return d;})
+    .style("font-size", "12px");
+});
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

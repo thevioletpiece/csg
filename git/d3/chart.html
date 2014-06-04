@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>D3 Lesson 2</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="myscripts.js"></script>
+
+<div id="buffer"></div>
+<div id="frame">
+<div id="title"> Title Here</div>
+<div id="chart-a"> Chart A </div>
+<div id="chart-b"> Chart B </div>
+<div id="chart-c"> Chart C </div>
+</div>
+
+
+<script type="text/javascript">
+
+ /*       CHART A           */   
+
+
+
+  var evenNumbers = [0, 2, 4, 6, 8, 10];
+  console.log(evenNumbers)
+  makeVerticalBarChart(evenNumbers, "#chart-a", 290, 530,  "#905", 0.5, 10)
+
+
+ /*       CHART B            */   
+    
+var chartB = d3.select('#chart-b').append('svg')
+
+var newCircle = chartB.append("circle")
+    .attr("cx", 220)
+    .attr("cy", 190)
+    .attr("r", 150)
+    .attr("fill", "blue")
+    .attr("opacity", 0.2)
+    .attr("id", "b-chart");
+
+
+/*       CHART C            */   
+
+var chartC = d3.select('#chart-c').append('svg')
+
+var newRect = chartC.append("rect")
+    .attr("x", 80)
+    .attr("y", 20)
+    .attr("height", 140)
+    .attr("width", 1000)
+    .attr("fill", "green")
+    .attr("opacity", 0.2)
+    .attr("id", "c-chart");
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

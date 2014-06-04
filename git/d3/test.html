@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+
+    </head>
+    <body>
+
+<style>
+  circle {
+     stroke: #006600;
+     fill  : #00cc00;
+  }
+
+  .mayo {
+     stroke: #006600;
+     fill  : #cc0000;
+     background-color: #00cccc;
+  }
+
+  #identify {
+    fill: #cccc00;
+  }
+</style>
+
+ <script type="text/javascript">
+
+
+var w = 500;
+var h = 500;
+
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h)
+            .attr("class", "mayo");
+
+var circle = svg.append("circle")
+            .attr("cx", h/2)
+            .attr("cy", w/2)
+            .attr("r", 100)
+            .attr("fill", "Blue")
+            .attr("class", "mayo")
+            .attr("id", "identify")
+            .attr("class", "mayo")
+
+
+/*
+var circles = svg.selectAll("circle")
+                 .data(dataset)
+                 .enter()
+                 .append("circle");
+
+circles.attr("cx", function(d, i) {
+            return (i * 50) + 25;
+        })
+       .attr("cy", h/2)
+       .attr("r", function(d) {
+            return d;
+       });
+
+*/
+        </script>
+
+ <div class="bar"></div>
+
+
+    </body>
+</html>

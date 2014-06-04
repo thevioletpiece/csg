@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>D3 Lesson 2</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+<script src="myscripts.js"></script>
+<script src="mystyle.css"></script>
+
+<!--<div id="buffer"></div>
+<div id="frame">
+<div id="chart-a"> Chart A </div>
+</div>
+-->
+
+<div id="hella"></div>
+
+
+<script type="text/javascript">
+
+ /*       CHART A           */   
+
+
+var dataset = [],
+tmpDataset = [],
+i, j;
+
+for (i = 1; i < 6; i++) {
+    for (j = 1, tmpDataset = []; j < 5; j++) {
+        tmpDataset.push("Row:"+i+",Col:"+j);
+    }
+    dataset.push(tmpDataset);
+}
+ 
+function makeTable(divId, dataset)  {
+d3.select(divId)
+    .append("table")
+    .style("border-collapse", "collapse")
+    .style("border", "2px black solid")
+    
+    .selectAll("tr")
+    .data(dataset)
+    .enter().append("tr")
+    
+    .selectAll("td")
+    .data(function(d){return d;})
+    .enter().append("td")
+    .style("border", "1px black solid")
+    .style("padding", "10px")
+    .on("mouseover", function(){d3.select(this).style("background-color", "aliceblue")}) 
+    .on("mouseout", function(){d3.select(this).style("background-color", "white")}) 
+    .text(function(d){return d;})
+    .style("font-size", "12px");
+  }
+
+  makeTable("#hella", dataset)
+
+
+ /* var evenNumbers = [0, 2, 4, 6, 8, 10];
+  console.log(evenNumbers)
+  makeVerticalBarChart(evenNumbers, "#chart-a", 290, 530,  "#905", 0.5, 10)*/
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
